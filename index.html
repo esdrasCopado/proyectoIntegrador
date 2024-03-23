@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio Sesión</title>
+
+    <link rel="icon" href="img/icono.png" sizes="48x48" type="image/png" />
+    <link rel="stylesheet" href="css/sesion-style.css">
+
+    <link rel="icon" href="icono.png" sizes="48x48" type="image/png" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/icono.png" sizes="48x48" type="image/png" />
+
+  </head>
+  <body>
+    <div class="main-component">
+      <div class="component">
+        <form action="" method="post">
+          <img class="logo" src="img/botas jusaino.svg" alt="" />
+          <h1 class="oO8pQe"><span>Inicia Sesión</span></h1>
+          <div id="emailElement" class="input-user">
+            <input
+              id="email"
+              required=""
+              type="text"
+              name="text"
+              autocomplete="off"
+              class="input"
+            />
+            <label class="user-label">Correo electronico</label>
+          </div>
+
+          <div id="passwordElement" class="input-user" style="display: none;">
+            <input
+              id="password"
+              required=""
+              type="password"
+              name="text"
+              class="input"
+            />
+            <label class="user-label">Contraseña</label>
+          </div>
+
+          <div class="buttons">
+            
+            <button onclick="registre()" class="interactive-button" type="button" >Crear cuenta</button>
+
+            <button id="sigiente" class="interactive-button" type="button" >Sigiente</button>
+            
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+
+      document.getElementById('sigiente').addEventListener("click",function(){
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("password").value;
+
+        document.getElementById("emailElement").style.display = "none";
+        document.getElementById("passwordElement").style.display = "inline-flex";
+
+        if(email!==""&&password!==""){
+          window.location.href = "e-shop.html";
+        }
+      })
+      function registre(){
+        window.location.href="https://botasjusaino.netlify.app/registeruser";
+      }
+
+      function eShop(){
+    const email = document.querySelector('.input-user input[name="text"]').value.trim();
+    if(email !== ""){
+      window.location.href = "e-shop.html";
+    }
+  }
+    </script>
+  </body>
+</html>
