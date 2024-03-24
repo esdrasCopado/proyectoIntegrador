@@ -13,7 +13,7 @@ document.getElementById("chechout-btn").addEventListener("click", async () => {
         price: 1,
       };
 
-      const responce = await fetch("http://34.228.167.100:3000/create_preference", {
+      const responce = await fetch("https://proyectoesdrascopado.com/create_preference", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
