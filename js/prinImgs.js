@@ -1,5 +1,5 @@
 async function getUrlFiles() {
-  const response = await fetch("http://34.228.167.100:3000/getUrlFiles", {
+  const response = await fetch("https://proyectoesdrascopado.com/getUrlFiles", {
     method: "GET",
   });
   if (response.ok) {
