@@ -79,7 +79,7 @@ async function uploadFile() {
     formData.append('file', file);
 
     try {
-        const response = await fetch('http://localhost:3000/files', {
+        const response = await fetch('https://proyectoesdrascopado.com//files', {
             method: 'POST',
             body: formData
         });
