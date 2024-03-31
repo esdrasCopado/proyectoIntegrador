@@ -4,20 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio Sesión</title>
-
+    <script src="js/singIn.js"></script>
     <link rel="icon" href="img/icono.png" sizes="48x48" type="image/png" />
     <link rel="stylesheet" href="css/sesion-style.css">
-
-    <link rel="icon" href="icono.png" sizes="48x48" type="image/png" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/icono.png" sizes="48x48" type="image/png" />
+    <link rel="icon" href="img/icono-paidy.svg" sizes="48x48" type="image/png" />
 
   </head>
   <body>
     <div class="main-component">
       <div class="component">
         <form action="" method="post">
-          <img class="logo" src="img/botas jusaino.svg" alt="" />
+          <img class="logo" src="img/paidy-logo2.svg" alt="" style="width: 464px;" />
           <h1 class="oO8pQe"><span>Inicia Sesión</span></h1>
           <div id="emailElement" class="input-user">
             <input
@@ -58,13 +55,17 @@
       document.getElementById('sigiente').addEventListener("click",function(){
         var email=document.getElementById("email").value;
         var password=document.getElementById("password").value;
-
+        if(email!==""){
+          
         document.getElementById("emailElement").style.display = "none";
         document.getElementById("passwordElement").style.display = "inline-flex";
-
-        if(email!==""&&password!==""){
-          window.location.href = "e-shop.html";
+          if(password!==""){
+            singIn(email,password);
+          }
         }
+
+
+
       })
       function registre(){
         window.location.href="https://botasjusaino.netlify.app/registeruser";

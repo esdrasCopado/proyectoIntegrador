@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
-    <link rel="icon" href="img/icono.png" sizes="48x48" type="image/png" />
+    <link rel="icon" href="img/icono-paidy.svg" sizes="48x48" type="image/png" />
     <link rel="stylesheet" href="css/sesion-style.css">
   </head>
   <body>
     <div class="main-component">
       <div class="component">
-        <form action="" method="post">
-          <img class="logo" src="img/botas jusaino.svg" alt="" />
+          <img class="logo" src="img/paidy-logo2.svg" alt="" style="width: 464px;" />
           <h1 class="oO8pQe"><span>Crea una cuenta</span></h1>
           <div class="input-group">
-            <div class="input-user">
-            <input
+
+            <div id="divEmail" class="input-user">
+            <input id="email"
               required=""
               type="text"
               name="text"
@@ -25,17 +25,39 @@
             <label class="user-label">Correo electronico</label>
 
             </div>
-            <div class="input-user">
-                <input
+            <div id="divName" class="input-user">
+                <input id="name"
                   required=""
                   type="text"
                   name="text"
                   autocomplete="off"
                   class="input"
                 />
-                <label class="user-label">Contraseña</label>
+                <label class="user-label">Nombre</label>
     
-                </div>
+            </div>
+            <div id="divPassword" class="input-user" style="display: none;">
+              <input id="password"
+                required=""
+                type="password"
+                name="text"
+                autocomplete="off"
+                class="input"
+              />
+              <label class="user-label">Contraseña</label>
+  
+            </div>
+            <div id="divRepetPassword" class="input-user" style="display: none;">
+              <input id="repetPassword"
+                required=""
+                type="password"
+                name="text"
+                autocomplete="off"
+                class="input"
+              />
+              <label class="user-label">Contraseña</label>
+  
+            </div>
             
 
          
@@ -43,13 +65,80 @@
           <div class="buttons">
             
             <button onclick="inicioSesion()" class="interactive-button" type="submit" >Sigiente</button>
-        </form>
+        
       </div>
     </div>
     <script>
-      function inicioSesion(){
-        window.location.href="index.html";
-      }
+      let clikedButton =0;
+    async function inicioSesion() {
+    const email = document.getElementById("email").value;
+    const name = document.getElementById("name").value;
+    if (email !== "" && name !== "") {
+        try {
+            
+            clikedButton++;
+            const emailDuplicateResponse = await fetch('http://localhost:3000/v1/userRoutes/emailDuplicate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email
+                })
+                
+            });
+            if (emailDuplicateResponse.ok) {
+                const { isDuplicate } = await emailDuplicateResponse.json();
+                if (!isDuplicate) {
+
+                    document.getElementById("divEmail").style.display = "none";
+                    document.getElementById("divName").style.display = "none";
+
+                    document.getElementById("divPassword").style.display ="inline-flex";
+                    document.getElementById("divRepetPassword").style.display ="inline-flex";
+
+                    const password = document.getElementById("password").value;
+                    const repetPassword = document.getElementById("repetPassword").value;
+
+                    if ((password!==""&&repetPassword!=="")&&(password === repetPassword)) {
+                      
+                        const registerUserResponse = await fetch('http://localhost:3000/v1/userRoutes/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                name: name,
+                                email: email,
+                                password: password
+                            })
+                        });
+                        if (registerUserResponse.ok) {
+                            console.log('User registration successful')
+                            window.location.href = 'index.html';
+                        } else {
+                            console.log('User registration failed');
+                        }
+                    } else if(clikedButton>=2){
+                        // Las contraseñas no coinciden
+                        alert('ingrese correctament las contraseñas')
+                    }
+                } else {
+                    // El correo electrónico ya está registrado
+                    console.log('El correo electrónico ya está registrado');
+                    alert('El correo electrónico ya está registrado')
+                }
+            } else {
+                // Error al verificar el correo electrónico duplicado
+                console.log('Error al verificar el correo electrónico duplicado');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            // Manejar errores de solicitud
+        }
+    }
+}
+
     </script>
   </body>
 </html>
