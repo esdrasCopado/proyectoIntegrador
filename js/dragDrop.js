@@ -94,11 +94,7 @@ async function uploadFile() {
     formData.append('file', file);
 
     try {
-<<<<<<< HEAD
         const response = await fetch('http://localhost:3000/v1/amazonRoutes/files', {
-=======
-        const response = await fetch('https://proyectoesdrascopado.com/files', {
->>>>>>> 1c2853fa21ddc60e1bf7a219485006da9b906521
             method: 'POST',
             body: formData
         });
