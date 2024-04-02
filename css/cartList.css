@@ -29,7 +29,7 @@
 }
 .main{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     
@@ -46,7 +46,7 @@
     justify-content: space-between;
   }
   .product-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     padding-bottom: 10px;
   }
@@ -84,6 +84,7 @@
     min-width: 36%;
     border-radius: 10px;
     background-color: #fff;
+    margin-bottom: 300px;
   }
 
   .main-cost{
@@ -97,13 +98,14 @@
     align-content: center;
   }
   .information{
-    max-width: 46%;
+    width: 26%;
   }
   .price{
     display: flex;
   }
   .img-product{
     height: 150px;
+    width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,9 +201,14 @@
     display: flex;
   }
   .chechout-btn{
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 68%;
     height: 60px;
     border-radius: 4px;
+    background-color: #0873c0;
+    color: #fff;
     border: none;
     font-size: 1.2rem;
     font-weight: 600;
@@ -217,6 +224,11 @@
     }
     .img-product .image{
         height: 90px;
+        width: 90px;
+    }
+    .img-product{
+        height: 90px;
+        width: 90px;
     }
     .description{
         display: none;
@@ -224,7 +236,6 @@
     .product-title{
         font-size: .8rem;
     }
-
     .main-articles{
         min-width: 100%;
         margin-bottom: 30vh;

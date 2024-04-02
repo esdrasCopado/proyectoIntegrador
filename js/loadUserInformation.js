@@ -1,9 +1,7 @@
-
-const userData = JSON.parse(sessionStorage.getItem('user'));
-
-if (userData) {
+const userID = sessionStorage.getItem('user');
+if (userID) {
     // Aquí puedes utilizar los datos del usuario, por ejemplo:
-    findUser(userData)
+    findUser(userID)
         .then(user => {
             loadUserInformation(user);
         })
@@ -15,13 +13,13 @@ if (userData) {
     window.location.href = 'index.html';
 }
 function loadUserInformation(userData) {
+    
     const divUserInfo = document.getElementById('userInformation');
     divUserInfo.innerHTML = '';
 
     // Verificar si hay datos de usuario
     if (userData && userData.data && userData.data.name) {
         const userName = userData.data.name;
-
         // Crear el HTML con el nombre del usuario
         const htmlInformation = `
             <span class="nav-user-1">Hola ${userName}</span>

@@ -13,7 +13,7 @@ async function singIn(email, password) {
 
     if (response.ok) {
         const data = await response.json();
-        sessionStorage.setItem('user', JSON.stringify(data.message)); // Almacena el mensaje en sessionStorage
+        sessionStorage.setItem('user', data.message);
         window.location.href = "e-shop.html";
     } else {
         console.error('Failed to login');

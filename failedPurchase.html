@@ -1,0 +1,72 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paidy-Carrito</title>
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+
+
+<link
+  rel="icon"
+  href="img/icono-paidy.svg"
+  sizes="48x48"
+  type="image/png"
+/>
+
+<link rel="stylesheet" href="css/mainStyle.css" />
+<link rel="stylesheet" href="css/failPurchase.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="e-shop.html">
+      <img class="logo-jusaino" src="img/paidy-logo-main-nav.svg" alt="" />
+    </a>
+  </div>
+
+  <div class="direction">
+    <div class="icon-location">
+      <span class="material-symbols-outlined"> location_on </span>
+    </div>
+    <div class="user-dir">
+      <span>Enviar a esdras</span>
+      <span>Ciudad Obregon</span>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div id="userInformation" class="user"></div>
+
+    <div class="home">
+      <a href="e-shop.html">
+        <span class="material-symbols-outlined"> home </span>
+      </a>
+    </div>
+    <div class="logout">
+      <span class="material-symbols-outlined"> logout </span>
+    </div>
+  </div>
+</header>
+
+<div class="main">
+  <div class="failPurchase">
+    <div class="result"><h3>Compra Fallida</h3></div>
+    
+    
+
+  </div>
+</div>
+<script src="js/loadUserInformation.js"></script>
+<script>
+    
+const circle = document.getElementById('circle');
+
+circle.addEventListener('click', function() {
+  // Cambiar el color de fondo del círculo cuando se hace clic
+  circle.style.backgroundColor = '#e74c3c'; // Cambia el color de fondo a rojo
+});
+</script>
+</body>
+</html>
