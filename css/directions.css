@@ -22,6 +22,10 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
+
+  .custom-radio:checked::before {
+    background-color: #00f; 
+  }
   .addNewDirection{
     padding-left: 20px;
     display: flex;
@@ -42,20 +46,7 @@ body{
     margin-top: 50px;
     width: 46%;
   }
-  .custom-radio::before {
-    content: ''; 
-    display: inline-block; 
-    width: 30px; 
-    height: 30px; 
-    border: 2px solid #000; 
-    border-radius: 50%; 
-    vertical-align: middle; 
-    margin-right: 10px; 
-  }
-  
-  .custom-radio:checked::before {
-    background-color: #00f; 
-  }
+
   .clientDirection{
     display: grid;
   }
