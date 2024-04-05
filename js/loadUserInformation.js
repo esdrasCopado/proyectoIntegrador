@@ -1,7 +1,7 @@
-const userID = sessionStorage.getItem('user');
-if (userID) {
+const user = sessionStorage.getItem('user');
+if (user) {
     // Aquí puedes utilizar los datos del usuario, por ejemplo:
-    findUser(userID)
+    findUser(user)
         .then(user => {
             loadUserInformation(user);
         })

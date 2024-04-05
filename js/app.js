@@ -48,7 +48,7 @@ async function create_preference() {
       ]
     };
     
-    const response = await fetch("http://localhost:3000/v1/mercadoPagoRoutes/createPreferences", {
+    const response = await fetch("https://proyectoesdrascopado.com/v1/mercadoPagoRoutes/createPreferences", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

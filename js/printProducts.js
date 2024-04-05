@@ -36,7 +36,6 @@ function printLoadingCards() {
         htmlContent += htmlArticle;
     }
     htmlContent+=`</div>`;
-    console.log(htmlContent);
     loadingAnimation.innerHTML = htmlContent;
 }
 

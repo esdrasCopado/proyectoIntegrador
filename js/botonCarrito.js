@@ -29,7 +29,7 @@ function getNameArticle(button) {
 async function add_shopping_cart(button) {
   const nameArticle = getNameArticle(button);
   console.log(nameArticle, userData);
-  if ((nameArticle, userData)) {
+  if (nameArticle && userData) { // Verifica que tanto nameArticle como userData tengan valores
     const result = await fetch("https://proyectoesdrascopado.com/v1/cartRoutes/", {
       method: "PATCH",
       headers: {
@@ -43,4 +43,5 @@ async function add_shopping_cart(button) {
     console.log(result);
   }
 }
+
 function subtract_shopping_cart() {}
