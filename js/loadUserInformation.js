@@ -36,7 +36,7 @@ function loadUserInformation(userData) {
 
 async function findUser(idUser) {
     try {
-        const response = await fetch('http://localhost:3000/v1/userRoutes/' + idUser, {
+        const response = await fetch('https://proyectoesdrascopado.com/v1/userRoutes/' + idUser, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

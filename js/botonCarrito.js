@@ -30,7 +30,7 @@ async function add_shopping_cart(button) {
   const nameArticle = getNameArticle(button);
   console.log(nameArticle, userData);
   if ((nameArticle, userData)) {
-    const result = await fetch("http://localhost:3000/v1/cartRoutes/", {
+    const result = await fetch("https://proyectoesdrascopado.com/v1/cartRoutes/", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

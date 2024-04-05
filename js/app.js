@@ -1,4 +1,4 @@
-const mp = new MercadoPago("APP_USR-83f51ded-7e73-427e-b8cb-4c15efe4b947", { local: "es-MX" });
+const mp = new MercadoPago("TEST-653b7fda-8319-45fd-ba8f-78648424b0f4", { local: "es-MX" });
 
 let checkoutButtonClicked = false; // Variable para rastrear si ya se hizo clic en el botón
 /**
@@ -31,15 +31,24 @@ let checkoutButtonClicked = false; // Variable para rastrear si ya se hizo clic 
 });
  * 
  */
-async function create_preference(){
+async function create_preference() {
   try {
     const orderData = {
-      title: "botas de armadillo",
-      quantity: 1,
-      price: 1,
+      products: [
+        {
+          title: "botas de armadillo",
+          quantity: 1,
+          price: 1,
+        },
+        {
+          title: "Motorola g5",
+          quantity: 1,
+          price: 5,
+        }
+      ]
     };
-
-    const responce = await fetch("http://localhost:3000/v1/mercadoPagoRoutes/createPreferences", {
+    
+    const response = await fetch("http://localhost:3000/v1/mercadoPagoRoutes/createPreferences", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,13 +56,25 @@ async function create_preference(){
       body: JSON.stringify(orderData),
     });
 
-    const preference = await responce.json();
+    if (!response.ok) {
+      throw new Error(`Failed to create payment preference: ${response.statusText}`);
+    }
 
-    createCheckoutButton(preference.id);
+    const preference = await response.json();
+
+    if (preference.id) {
+      createCheckoutButton(preference.id);
+    } else {
+      // Manejar la situación donde no se recibe un ID de preferencia.
+      throw new Error("No se pudo crear la preferencia de pago.");
+    }
   } catch (error) {
-    alert("error :(");
+    console.error("Error creating payment preference:", error);
+    alert("Error al crear la preferencia de pago :(");
   }
 }
+
+
 
 
 const createCheckoutButton = (preferenceId) => {

@@ -1,0 +1,93 @@
+body{
+    background-color: #faf4fab8;
+  }
+  
+  .main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.custom-radio {
+    width: 20px;
+  }
+  .clientDirections{
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    min-height: 140px;
+    display: flex;
+    align-items: baseline;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .addNewDirection{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 70px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .clientDirections:hover,.addNewDirection:hover{
+    background-color: rgba(109, 108, 108, 0.1);
+  }
+  .mainDirections{
+    margin-top: 50px;
+    width: 46%;
+  }
+  .custom-radio::before {
+    content: ''; 
+    display: inline-block; 
+    width: 30px; 
+    height: 30px; 
+    border: 2px solid #000; 
+    border-radius: 50%; 
+    vertical-align: middle; 
+    margin-right: 10px; 
+  }
+  
+  .custom-radio:checked::before {
+    background-color: #00f; 
+  }
+  .clientDirection{
+    display: grid;
+  }
+  .custom-radio-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+  }
+  .button{
+    display: flex;
+    justify-content: end;    
+  }
+  .chechout-btn{
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #0873c0;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  }
+  .chechout-btn:hover{
+    background-color: #055894;
+    color: #fff;
+  }
+  
+  

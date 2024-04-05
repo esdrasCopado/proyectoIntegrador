@@ -3,7 +3,7 @@ const loadingAnimation= document.getElementById('container-cards')
 
 async function getProducts() {
     printLoadingCards();
-    const response = await fetch('http://localhost:3000/v1/productRoutes/');
+    const response = await fetch('https://proyectoesdrascopado.com/v1/productRoutes/');
     if (response.ok) {
         const data = await response.json();
         if (Array.isArray(data.data)) {

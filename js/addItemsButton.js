@@ -46,7 +46,7 @@ async function addQuantityProduct(idUser, productName) {
     try {
         const encodedProduct = encodeURIComponent(productName);
         // Nota el uso directo de variables sin comillas extras en la URL
-        const response = await fetch(`http://localhost:3000/v1/cartRoutes/addQuantityProduct/${idUser}/${encodedProduct}`, {
+        const response = await fetch(`https://proyectoesdrascopado.com/v1/cartRoutes/addQuantityProduct/${idUser}/${encodedProduct}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ async function subtractQuantityProduct(idUser, productName) {
     try {
         const encodedProduct = encodeURIComponent(productName);
         // Nota el uso directo de variables sin comillas extras en la URL
-        const response = await fetch(`http://localhost:3000/v1/cartRoutes/subtractQuantityProduct/${idUser}/${encodedProduct}`, {
+        const response = await fetch(`https://proyectoesdrascopado.com/v1/cartRoutes/subtractQuantityProduct/${idUser}/${encodedProduct}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ async function deleteProduct(idUser, productName) {
     try {
         const encodedProduct = encodeURIComponent(productName);
         // Nota el uso directo de variables sin comillas extras en la URL
-        const response = await fetch(`http://localhost:3000/v1/cartRoutes/${idUser}/${encodedProduct}`, {
+        const response = await fetch(`https://proyectoesdrascopado.com/v1/cartRoutes/${idUser}/${encodedProduct}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

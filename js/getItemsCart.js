@@ -6,7 +6,7 @@ async function getItemsCart() {
     window.location.href = "index.html";
   }
   const response = await fetch(
-    `http://localhost:3000/v1/cartRoutes/${idClient}`,
+    `https://proyectoesdrascopado.com/v1/cartRoutes/${idClient}`,
     {
       method: "GET",
       headers: {
@@ -16,6 +16,7 @@ async function getItemsCart() {
   );
   if (response.ok) {
     const data = await response.json();
+    sessionStorage.setItem("products", JSON.stringify(data.data));
     printItemsCart(data.data);
     loadCostInformation(data);
     articleButtonClick();

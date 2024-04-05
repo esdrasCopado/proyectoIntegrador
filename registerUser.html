@@ -77,7 +77,7 @@
         try {
             
             clikedButton++;
-            const emailDuplicateResponse = await fetch('http://localhost:3000/v1/userRoutes/emailDuplicate', {
+            const emailDuplicateResponse = await fetch('https://proyectoesdrascopado.com/v1/userRoutes/emailDuplicate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -102,7 +102,7 @@
 
                     if ((password!==""&&repetPassword!=="")&&(password === repetPassword)) {
                       
-                        const registerUserResponse = await fetch('http://localhost:3000/v1/userRoutes/', {
+                        const registerUserResponse = await fetch('https://proyectoesdrascopado.com/v1/userRoutes/', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'

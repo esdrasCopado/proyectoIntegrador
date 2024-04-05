@@ -19,6 +19,7 @@
     
     <link rel="stylesheet" href="css/mainStyle.css" />
     <link rel="stylesheet" href="css/cartList.css" />
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
   </head>
   <body>
     <header>
@@ -56,27 +57,11 @@
 
     <div class="main">
 
-
-      <div id="main-articles" class="main-articles"></div>
+      <div id="wallet_container"></div>
     </div>
 
-    <div class="buyProducts">
-      <div class="mainConst">
-        <div id="costInformation" class="costInformation">
-          
-        </div>
 
-        <div onclick="directionButtonClick()" class="chechout-btn"><h3>Continuar</h3></div>
-      </div>
-    </div>
-    <script>
-      function directionButtonClick(){
-        window.location.href="directions.html"
-      }
-    </script>
     <script src="js/app.js"></script>
-    <script src="js/addItemsButton.js"></script>
     <script src="js/loadUserInformation.js"></script>
-    <script src="js/getItemsCart.js"></script>
   </body>
 </html>

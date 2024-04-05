@@ -94,7 +94,7 @@ async function uploadFile() {
     formData.append('file', file);
 
     try {
-        const response = await fetch('http://localhost:3000/v1/amazonRoutes/files', {
+        const response = await fetch('https://proyectoesdrascopado.com/v1/amazonRoutes/files', {
             method: 'POST',
             body: formData
         });
@@ -123,7 +123,7 @@ async function uploadFile() {
 }
 async function createNewProduct(product){
     console.log(product);
-    const response = await fetch('http://localhost:3000/v1/productRoutes', {
+    const response = await fetch('https://proyectoesdrascopado.com/v1/productRoutes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
