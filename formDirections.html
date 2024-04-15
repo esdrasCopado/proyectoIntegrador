@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin-Products</title>
+    <link
+      rel="icon"
+      href="img/icono-paidy.svg"
+      sizes="48x48"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link rel="stylesheet" href="css/mainStyle.css" />
+    <link rel="stylesheet" href="css/adminProduct.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+  </head>
+  <body>
+    <header>
+
+      <div class="logo">
+        <img class="logo-jusaino" src="img/paidy-logo-main-nav.svg" alt="" />
+      </div>
+
+      <div id="direction" class="direction">
+        <div class="icon-location">
+          <span class="material-symbols-outlined"> location_on </span>
+        </div>
+        <div class="user-dir">
+          <span>Enviar a esdras</span>
+          <span>Ciudad Obregon</span>
+        </div>
+      </div>
+
+      <div class="menu">
+        <div id="userInformation" class="user">
+
+        </div>
+        <div id="home" class="menu" >
+          <span class="material-symbols-outlined"> Menu </span>
+        </div>
+        <div class="home">
+          <span class="material-symbols-outlined"> home </span>
+        </div>
+        <div class="logout">
+          <span class="material-symbols-outlined"> logout </span>
+        </div>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="titulo">
+        <h2>Registra una nueva direccion</h2>
+        <p>Presiona enter al introducir el código postal</p>
+      </div>
+      <!-------------inputs-------------->
+      <div class="input-grup">
+        <div  class="input-user">
+          <input id ="CP-user"
+            required="true"
+            type="text"
+            name="text"
+            autocomplete="off"
+            class="input"
+          />
+          <label class="user-label">Codigo Postal</label>
+        </div>
+      </div>
+
+      <div class="input-grup">
+        <div  class="input-user">
+          <input id ="city-user"
+            required="true"
+            type="text"
+            name="text"
+            autocomplete="off"
+            class="input"
+          />
+          <label class="user-label">Ciudad</label>
+        </div>
+      </div>
+      <div class="input-grup">
+        <div  class="input-user">
+          <input id ="state-user"
+            required="true"
+            type="text"
+            name="text"
+            autocomplete="off"
+            class="input"
+          />
+          <label class="user-label">Estado</label>
+        </div>
+      </div>
+
+      <div class="input-grup">
+        <div id="Neighborhoods" class="input-user">
+          <select name="Neighborhood" class="input" id="Neighborhoods-cp" aria-placeholder="colonias">
+            <option value="Colonias">Colonias</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-grup">
+        <div  class="input-user">
+          <input id ="street-user"
+            required="true"
+            type="text"
+            name="text"
+            autocomplete="off"
+            class="input"
+          />
+          <label class="user-label">Calle</label>
+        </div>
+      </div>
+      <div class="input-grup">
+        <div  class="input-user">
+          <input id ="StreetNomber-user"
+            required="true"
+            type="text"
+            name="text"
+            autocomplete="off"
+            class="input"
+          />
+          <label class="user-label">No. domicilio</label>
+        </div>
+      </div>
+
+      <div class="input-grup">
+        <div  class="input-user">
+          <input id ="DeliveryInstructions"
+            required="true"
+            type="text"
+            name="text"
+            autocomplete="off"
+            class="input"
+          />
+          <label class="user-label">Instrucciones</label>
+        </div>
+      </div>
+      <div class="buttons">
+
+        <button id="sigiente" onclick="setRequest()" class="interactive-button" type="button" >Guardar direccion</button>
+        
+
+      </div>
+
+      
+
+      <script src="js/loadUserInformation.js"></script>
+      <script src="js/directionsForm.js"></script>
+
+  </body>
+</html>

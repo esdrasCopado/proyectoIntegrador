@@ -52,31 +52,26 @@
     </div>
     <script>
 
-      document.getElementById('sigiente').addEventListener("click",function(){
-        var email=document.getElementById("email").value;
-        var password=document.getElementById("password").value;
-        if(email!==""){
-          
+document.getElementById('sigiente').addEventListener("click", async function(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if (email !== "") {
         document.getElementById("emailElement").style.display = "none";
         document.getElementById("passwordElement").style.display = "inline-flex";
-          if(password!==""){
-            singIn(email,password);
-          }
+        if (password !== "") {
+            try {
+                const result = await singIn(email, password);
+            } catch (error) {
+                console.error('Error during login:', error);
+                alert("Error during login");
+            }
         }
+    }
+});
 
-
-
-      })
       function registre(){
         window.location.href="registeruser.html";
       }
-
-      function eShop(){
-    const email = document.querySelector('.input-user input[name="text"]').value.trim();
-    if(email !== ""){
-      window.location.href = "e-shop.html";
-    }
-  }
     </script>
   </body>
 </html>

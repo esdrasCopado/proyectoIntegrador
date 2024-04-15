@@ -16,7 +16,6 @@ async function getItemsCart() {
   );
   if (response.ok) {
     const data = await response.json();
-    sessionStorage.setItem("products", JSON.stringify(data.data));
     printItemsCart(data.data);
     loadCostInformation(data);
     articleButtonClick();

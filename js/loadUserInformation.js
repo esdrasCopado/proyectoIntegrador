@@ -1,38 +1,35 @@
-const user = sessionStorage.getItem('user');
-if (user) {
-    // Aquí puedes utilizar los datos del usuario, por ejemplo:
-    findUser(user)
-        .then(user => {
-            loadUserInformation(user);
+
+const currentUserData = sessionStorage.getItem('user');
+if (currentUserData) {
+    findUser(currentUserData)
+        .then(userInfo => {
+            loadUserInformation(userInfo);
         })
         .catch(error => {
             console.error('Error al buscar usuario:', error);
+            alert('Error al cargar la información del usuario');
+            redirectToLoginPage();
         });
 } else {
     console.log('No hay datos de usuario en sessionStorage');
-    window.location.href = 'index.html';
+    redirectToLoginPage();
 }
+
 function loadUserInformation(userData) {
-    
     const divUserInfo = document.getElementById('userInformation');
     divUserInfo.innerHTML = '';
-
-    // Verificar si hay datos de usuario
     if (userData && userData.data && userData.data.name) {
         const userName = userData.data.name;
-        // Crear el HTML con el nombre del usuario
         const htmlInformation = `
             <span class="nav-user-1">Hola ${userName}</span>
             <span class="nav-user-2">Informacion de la cuenta</span>
         `;
-
-        // Insertar el HTML en el div
         divUserInfo.innerHTML = htmlInformation;
     } else {
         console.error('No se pudo cargar la información del usuario');
+        alert('No se pudo cargar la información del usuario');
     }
 }
-
 
 async function findUser(idUser) {
     try {
@@ -45,9 +42,16 @@ async function findUser(idUser) {
         if (!response.ok) {
             throw new Error('Error al obtener datos del usuario');
         }
-        return response.json();
+        const userData = await response.json();
+        sessionStorage.setItem('nameUser', userData.data.name);
+        return userData;
     } catch (error) {
         throw error;
     }
 }
+
+function redirectToLoginPage() {
+    window.location.href = 'index.html';
+}
+
 
