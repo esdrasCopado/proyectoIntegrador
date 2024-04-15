@@ -33,7 +33,6 @@ let checkoutButtonClicked = false; // Variable para rastrear si ya se hizo clic 
  */
 async function create_preference() {
   try {
-    const user = sessionStorage.getItem("user");
     const orderData = {
       products: [
         {
@@ -49,12 +48,12 @@ async function create_preference() {
       ]
     };
     
-    const response = await fetch("https://proyectoesdrascopado.com/v1/mercadoPagoRoutes/createPreferences/", {
+    const response = await fetch("http://localhost:3000/v1/mercadoPagoRoutes/createPreferences/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(orderData),
     });
 
     if (!response.ok) {

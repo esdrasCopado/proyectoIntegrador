@@ -32,6 +32,7 @@ function loadUserInformation(userData) {
 }
 
 async function findUser(idUser) {
+    
     try {
         const response = await fetch('https://proyectoesdrascopado.com/v1/userRoutes/' + idUser, {
             method: 'GET',
@@ -43,6 +44,7 @@ async function findUser(idUser) {
             throw new Error('Error al obtener datos del usuario');
         }
         const userData = await response.json();
+        console.log(userData);
         sessionStorage.setItem('nameUser', userData.data.name);
         return userData;
     } catch (error) {
