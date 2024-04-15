@@ -1,4 +1,4 @@
-const mp = new MercadoPago("APP_USR-5661331155925102-040303-fa59f7fd3fa3ac0b5c7c313de816184a-177908791", { local: "es-MX" });
+const mp = new MercadoPago("APP_USR-27d41402-138f-46f0-bf77-a22285ae9696", { local: "es-MX" });
 
 let checkoutButtonClicked = false; // Variable para rastrear si ya se hizo clic en el botón
 /**
